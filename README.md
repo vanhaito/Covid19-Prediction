@@ -1,4 +1,4 @@
-Đề tài: Dự đoán Covid-19 bằng ảnh X-quang sử dụng mô hình học sâu convoluion neural network
+Đề tài: Dự đoán Covid-19 bằng ảnh X-quang sử dụng mô hình học sâu convoluion neural network.
 Sinh viên thực hiện: Tô Văn Hải, Nguyễn Văn Sang, Đào Quang Công.
 1. File dataset: Gồm 3 tập ảnh COVID:1000 ảnh, Normal:1000 ảnh và ViralPneumonia:1000 ảnh với kích thước ảnh đầu vào 299x299.
 2. File source: Xử lý dữ liệu đầu vào và xây dựng mô hình CNN bằng framework Keras .
