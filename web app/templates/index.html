@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="background-img" style="background: url({{ url_for('static', filename='background-edit.jpg') }})no-repeat fixed center / cover ;">
+        <div class="grid wide main">
+            <h1>Covid-19 Prediction Using X-ray Images</h1>
+
+            <div class="row main__result">
+                <div class="col l-6 main__result-c-1">
+                    <input id="image-selector" type="file" name="file" class="inputfile" />
+                    <label for="image-selector" class="btn">Choose a file</label>
+                    <button id="predict-button" class="btn btn-pre">Predict</button>
+                    <p class="main__result-text">Covid: <span id="result1">...</span></p>
+                    <p class="main__result-text">Normal : <span id="result2">...</span></p>
+                    <p class="main__result-text">Viral pneumonia: <span id="result3">...</span></p>
+                </div>
+                <div class="col l-6 main__result-c-2">
+                    <img id="selected-image" width="400" src="" />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    let base64Image;
+    $("#image-selector").change(function() {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let dataURL = reader.result;
+            $('#selected-image').attr("src", dataURL);
+            base64Image = dataURL.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+            console.log(base64Image);
+        }
+        reader.readAsDataURL($("#image-selector")[0].files[0]);
+        $("#result1").text("");
+        $("#result2").text("");
+        $("#result3").text("");
+
+    });
+
+    $("#predict-button").click(function() {
+        let message = {
+            image: base64Image
+        }
+        console.log(message);
+        $.post("http://127.0.0.1:5000/predict", JSON.stringify(message), function(response) {
+            $("#result1").text(response.prediction.result1);
+            $("#result2").text(response.prediction.result2);
+            $("#result3").text(response.prediction.result3);
+            console.log(response);
+        });
+    });
+</script>
+
+</html>
