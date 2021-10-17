@@ -14,14 +14,12 @@ app = Flask(__name__)
 
 model = load_model('model/predict-covid-19.h5')
 
-
 def preprocess(img):
 	img = np.array(img)
 	if(img.ndim == 3):
 		gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	else:
 		gray = img
-
 	resized = cv2.resize(gray, (img_size, img_size))
 	reshaped = resized.reshape(1, img_size, img_size, 1)
 	return reshaped
@@ -59,4 +57,3 @@ def predict():
 
 if __name__ == '__main__':
 	app.run(debug=True)
-
