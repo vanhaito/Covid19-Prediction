@@ -16,27 +16,21 @@ X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2)
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2)
 
 size = 224
+
 # Xay dung model
 model = Sequential()
 model.add(Input(shape=(size, size, 1)))
-
 model.add(Lambda(lambda x: x/255.0))
 model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-
 model.add(MaxPooling2D(pool_size=(2, 2)))
-
 model.add(Flatten())
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
@@ -51,7 +45,7 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 # luu weights
-checkpoint = ModelCheckpoint("best_weights.hdf5", monitor="val_accuracy", verbose=1,
+checkpoint = ModelCheckpoint("predict-covid-19.h5", monitor="val_accuracy", verbose=1,
                              save_best_only=True, mode="max")
 
 # thuc hien train model voi data
@@ -72,9 +66,6 @@ plt.legend()
 plt.show()
 
 # Danh gia model voi du lieu test
+model = load_model("predict-covid-19.h5")
 score = model.evaluate(X_test, y_test, verbose=0)
 print(score)
-
-# luu model file h5
-model.save("predict-covid-19.h5")
-
