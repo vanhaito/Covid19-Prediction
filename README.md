@@ -18,9 +18,9 @@
  - Flask
 ## Data Collection
 - The dataset used takes 3000 images of the 3 classes: normal, COVID, and viral penumonia, respectively.
-  - Train contains 64 %
-  - Validation contains 16%
-  - Test contains 20%
+  - Train set contains 64 %
+  - Validation set contains 16%
+  - Test scontains 20%
 - Source: https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database
 ## Deep Learning Model
 For this problem, a convolutional neural network was used to train the model. The model receives a raw image, then proceeds to clean it. After that, the cleaned image is fed into the CNN model, which proceeds to train and, in the end, classify the image with a probability for each class.
