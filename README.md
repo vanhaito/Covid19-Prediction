@@ -8,16 +8,17 @@
   * [Data Preprocessing](#data-preprocessing)
   * [Deeplearning Model](#deeplearning-model)
   * [Result](#result)
-  * [Team](#team)
 
 
 ## Demo
 ![](https://github.com/vanhaito/Flask-Covid19-Prediction-WebApp/blob/main/demo.png)
 ## Overview
-This is a university group project built in Flask Framwork. The CNN model takes an X-ray image and predicts if the image belongs to 1 of 3 classes with a probability: Normal, Covid, or Viral pneumonia.
+ - This is a university group project about Artificial Intelligence. The CNN model takes an X-ray image and predicts if the image belongs to 1 of 3 classes with a probability: Normal, Covid, or Viral pneumonia. 
 ## Framework Used
+ - Keras
+ - Flask
 ## Data Collection
+![](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database)
 ## Data Preprocessing
 ## Deeplearning Model
 ## Result
-## Team
