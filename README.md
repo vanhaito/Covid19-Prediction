@@ -18,7 +18,7 @@
  - Keras
  - Flask
 ## Data Collection
-![](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database)
+[https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database]
 ## Data Preprocessing
 ## Deeplearning Model
 ## Result
