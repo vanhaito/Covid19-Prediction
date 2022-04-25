@@ -18,7 +18,7 @@
  - Keras
  - Flask
 ## Data Collection
-[https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database]
+The dataset used takes 3000 images of the 3 classes: normal, COVID, and viral penumonia, respectively, from source: [https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database]
 ## Data Preprocessing
 ## Deeplearning Model
 ## Result
