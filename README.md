@@ -5,7 +5,6 @@
   * [Overview](#overview)
   * [Framework Used](#framework-used)
   * [Data Collection](#data-collection)
-  * [Data Preprocessing](#data-preprocessing)
   * [Deeplearning Model](#deeplearning-model)
   * [Result](#result)
 
@@ -19,6 +18,8 @@
  - Flask
 ## Data Collection
 The dataset used takes 3000 images of the 3 classes: normal, COVID, and viral penumonia, respectively, from source: https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database
-## Data Preprocessing
 ## Deeplearning Model
+In this problem, a convolutional neural network was used to train the model. The model receives a raw image, then proceeds to clean it. After that, the cleaned image is fed into the CNN model, that proceeds to train and in the end classify the image.
+![](https://github.com/vanhaito/Flask-Covid19-Prediction-WebApp/blob/main/model.png)
+
 ## Result
