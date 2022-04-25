@@ -12,7 +12,7 @@
 
 
 ## Demo
-[![](https://github.com/vanhaito/Flask-Covid19-Prediction-WebApp/blob/main/demo.png)]
+![](https://github.com/vanhaito/Flask-Covid19-Prediction-WebApp/blob/main/demo.png)
 ## Overview
 ## Framework Used
 ## Data Collection
